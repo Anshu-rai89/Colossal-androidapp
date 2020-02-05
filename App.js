@@ -4,49 +4,80 @@ import {
   Text,
   View,
   StatusBar,
-  Header
+  Header,
+
 
 
 } from 'react-native';
 import Button from './components/button';
 import TextCustom from './components/text';
-import { LinearGradient } from 'expo-linear-gradient';
+import LGradient from './components/layout';
 import Myheader from './components/myheader';
- 
+import {createAppContainer}  from 'react-navigation';
+import {createDrawerNavigator} from 'react-navigation-drawer';
+import {TextInput} from 'react-native-paper';
+import {Ionicons}  from '@expo/vector-icons';
+
+
+
+
+
+
+
+
+
 export default function App() {
 
-  const gradient = `linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%),
-  repeating-linear-gradient(-115deg, transparent, transparent 20, rgba(255,255,255,0.1) 20, rgba(255,255,255,0.1) 40),
-  repeating-linear-gradient(115deg, transparent, transparent 20, rgba(255,255,255,0.1) 20, rgba(255,255,255,0.1) 40)`;
+ 
+
 
   return (
 
-   
+    
     <View style={styles.container}>
       <Myheader />
      <StatusBar backgroundColor="blue" barStyle="light-content" />
-     <LinearGradient
-          colors={['#2196f3', '#0ff2fe']}
-          start={{x:0,y:0}}
-          end={{x:1,y:1}}
-          style={{
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            top: 0,
-            flex:1,
-            alignItems:'center',
-            justifyContent:'center',
-            height:800
-            
-          }}
-        />
+   
   
-
+   <LGradient />
+   
  
 
-    <Text style={styles.textstyle}> Welcome To Colossal</Text>
+  <View style={{backgroundColor:'#2187C4',paddingTop:20,paddingBottom:40 ,paddingRight:50,paddingLeft:50,marginTop:100} }> 
+   <Text style={styles.textstyle}>SignUp</Text>
+    <View>
+      
+    
+    <TextInput  
+  style={styles.textinputstyle}
+     placeholder='Name'
+    
+      
 
+    
+    />
+    </View>
+
+   
+    <TextInput  
+   style={styles.textinputstyle}
+      placeholder='Email'
+    
+    />
+    <TextInput  
+    style={styles.textinputstyle}
+      placeholder='Password'
+    
+    />
+    <TextInput  
+    style={styles.textinputstyle}
+      placeholder='Confirm Password'
+    
+    />
+    
+    <Button  mode='contained'/>
+  
+    </View>
      
     </View>
   );
@@ -68,6 +99,22 @@ const styles = StyleSheet.create({
     fontWeight:'800'
 
   },
+  icon:
+  {
+    marginBottom:-45,
+    zIndex:2,
+    marginLeft:2,
+    padding:3
+  },
+  textinputstyle:
+  {
+    height:30 ,
+    width:200,
+    padding:6,
+    borderRadius: 4,
+    marginTop:10,
+    textAlign:'center'
+  }
 
 
 });
