@@ -10,6 +10,13 @@
       "web"
     ],
     "version": "1.0.0",
+    "android":{
+      
+        "package":"com.anshumyapp",
+         "versionCode":1 , 
+         "icon":"./assets/icon.png"
+             
+    },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

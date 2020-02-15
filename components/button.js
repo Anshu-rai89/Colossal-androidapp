@@ -3,7 +3,7 @@ import { Button } from 'react-native-paper';
 
 const MyComponent = () => (
   <Button style={{marginTop:20}} mode="contained" onPress={() => console.log('Pressed')}>
-    Signup
+    SignUp
   </Button>
 );
 

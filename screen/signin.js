@@ -8,14 +8,12 @@ import {
 
 
 
+
 } from 'react-native';
-import Button from './components/button';
-import TextCustom from './components/text';
-import LGradient from './components/layout';
-import Myheader from './components/myheader';
-import {createAppContainer}  from 'react-navigation';
-import {createDrawerNavigator} from 'react-navigation-drawer';
-import {TextInput} from 'react-native-paper';
+
+
+import Myheader from '../components/myheader';
+import {TextInput,Button} from 'react-native-paper';
 import {Ionicons}  from '@expo/vector-icons';
 
 
@@ -25,27 +23,28 @@ import {Ionicons}  from '@expo/vector-icons';
 
 
 
-const Signin=()=>
-{
+
+
+const SignIn=()=> {
 
  
 
 
   return (
 
-    
+ 
     <View style={styles.container}>
-      <Myheader />
+       <Myheader />
      <StatusBar backgroundColor="blue" barStyle="light-content" />
    
   
-   <LGradient />
+  
    
  
 
   <View style={{backgroundColor:'#2187C4',paddingTop:20,paddingBottom:40 ,paddingRight:50,paddingLeft:50,marginTop:100} }> 
-   <Text style={styles.textstyle}>Signin</Text>
-   
+   <Text style={styles.textstyle}>SignIn</Text>
+    
 
    
     <TextInput  
@@ -58,17 +57,21 @@ const Signin=()=>
       placeholder='Password'
     
     />
-   
+   <Button style={{marginTop:20}} mode="contained" onPress={() => navigation.navigate('Signin')}>
+    SignUp
+  </Button>
     
-    <Button  mode='contained'/>
+   
   
+  <Text style={{color:'white',fontSize:16,margin:5}} onPress={() => navigation.navigate('Signup')}>Dont have account ?</Text>
     </View>
      
-    </View>
+    </View> 
+    
   );
 }
 
-const styles = StyleSheet.create({
+ const styles = StyleSheet.create({
   container: {
     flex: 1,
     
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
     fontSize:35,
     marginTop:35,
     textAlign:'center',
-    color:'#fff',
+    color:"#ffffff",
     fontWeight:'800'
 
   },
@@ -102,4 +105,7 @@ const styles = StyleSheet.create({
   }
 
 
-});
+}); 
+
+
+export default SignIn;

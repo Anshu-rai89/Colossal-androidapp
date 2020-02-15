@@ -13,108 +13,75 @@ import Button from './components/button';
 import TextCustom from './components/text';
 import LGradient from './components/layout';
 import Myheader from './components/myheader';
-import {createAppContainer}  from 'react-navigation';
-import {createDrawerNavigator} from 'react-navigation-drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import {TextInput} from 'react-native-paper';
 import {Ionicons}  from '@expo/vector-icons';
+import SignUP from './screen/sigunup';
+import SignIn from './screen/signin';
 
 
 
-
-
-
-
-
-
-export default function App() {
-
- 
-
-
+function Signin({ navigation }) {
   return (
-
-    
-    <View style={styles.container}>
-      <Myheader />
-     <StatusBar backgroundColor="blue" barStyle="light-content" />
-   
-  
-   <LGradient />
-   
- 
-
-  <View style={{backgroundColor:'#2187C4',paddingTop:20,paddingBottom:40 ,paddingRight:50,paddingLeft:50,marginTop:100} }> 
-   <Text style={styles.textstyle}>SignUp</Text>
-    <View>
-      
-    
-    <TextInput  
-  style={styles.textinputstyle}
-     placeholder='Name'
-    
-      
-
-    
-    />
-    </View>
-
-   
-    <TextInput  
-   style={styles.textinputstyle}
-      placeholder='Email'
-    
-    />
-    <TextInput  
-    style={styles.textinputstyle}
-      placeholder='Password'
-    
-    />
-    <TextInput  
-    style={styles.textinputstyle}
-      placeholder='Confirm Password'
-    
-    />
-    
-    <Button  mode='contained'/>
-  
-    </View>
-     
+    <View >
+       <SignIn/>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+function Signup({navigation})
+{
+  return (
+    <View >
+       <SignUP/>
+    </View>
+  );
+}
+
+function Home({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        title="Welcome"
+      />
+    </View>
+  );
+} 
+
+
+
+const Stack = createStackNavigator();
+
+function MyStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Signin" component={Signin} />
+      <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="Home" component={Home} />
+   
+    </Stack.Navigator>
+  );
+}
+
+export default function App() {
+
+ 
+ 
+  return (
+
+ 
+   <>
+   <LGradient/>
+   <NavigationContainer>
+      <MyStack />
+    </NavigationContainer><NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+   
+   </>
     
-    alignItems: 'center',
-  },
+  );
+}
 
-  textstyle:
-  {
-    fontSize:35,
-    marginTop:35,
-    textAlign:'center',
-    color:'#fff',
-    fontWeight:'800'
-
-  },
-  icon:
-  {
-    marginBottom:-45,
-    zIndex:2,
-    marginLeft:2,
-    padding:3
-  },
-  textinputstyle:
-  {
-    height:30 ,
-    width:200,
-    padding:6,
-    borderRadius: 4,
-    marginTop:10,
-    textAlign:'center'
-  }
-
-
-});
+ 
