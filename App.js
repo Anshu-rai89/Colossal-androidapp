@@ -22,26 +22,11 @@ import SignIn from './screen/signin';
 
 
 
-function Signin({ navigation }) {
-  return (
-    <View >
-       <SignIn/>
-    </View>
-  );
-}
 
-function Signup({navigation})
-{
-  return (
-    <View >
-       <SignUP/>
-    </View>
-  );
-}
 
 function Home({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View >
       <Button
         title="Welcome"
       />
@@ -55,12 +40,17 @@ const Stack = createStackNavigator();
 
 function MyStack() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Signin" component={Signin} />
-      <Stack.Screen name="Signup" component={Signup} />
+    <>
+    <Stack.Navigator  screenOptions={{
+    headerShown: false
+  }} >
+   
+      <Stack.Screen name="Signin" component={SignIn} />
+      < Stack.Screen name="Signup" component={SignUP} />
       <Stack.Screen name="Home" component={Home} />
    
     </Stack.Navigator>
+    </>
   );
 }
 
@@ -72,10 +62,8 @@ export default function App() {
 
  
    <>
-   <LGradient/>
+ 
    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer><NavigationContainer>
       <MyStack />
     </NavigationContainer>
    

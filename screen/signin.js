@@ -15,6 +15,7 @@ import {
 import Myheader from '../components/myheader';
 import {TextInput,Button} from 'react-native-paper';
 import {Ionicons}  from '@expo/vector-icons';
+import LGradient from '../components/layout';
 
 
 
@@ -25,7 +26,8 @@ import {Ionicons}  from '@expo/vector-icons';
 
 
 
-const SignIn=()=> {
+
+const SignIn=(props)=> {
 
  
 
@@ -41,7 +43,7 @@ const SignIn=()=> {
   
    
  
-
+    <LGradient/>
   <View style={{backgroundColor:'#2187C4',paddingTop:20,paddingBottom:40 ,paddingRight:50,paddingLeft:50,marginTop:100} }> 
    <Text style={styles.textstyle}>SignIn</Text>
     
@@ -57,13 +59,13 @@ const SignIn=()=> {
       placeholder='Password'
     
     />
-   <Button style={{marginTop:20}} mode="contained" onPress={() => navigation.navigate('Signin')}>
-    SignUp
+   <Button style={{marginTop:20}} mode="contained" onPress={(props) => props.pass.navigate('Signin')}>
+    Signin
   </Button>
     
-   
+  <Text style={{color:'white',fontSize:16,marginTop:5}} onPress={() => props.navigation.navigate('Signup')}>Dont have account ?</Text>
   
-  <Text style={{color:'white',fontSize:16,margin:5}} onPress={() => navigation.navigate('Signup')}>Dont have account ?</Text>
+  
     </View>
      
     </View> 
