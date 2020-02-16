@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Button from './components/button';
 import TextCustom from './components/text';
-import LGradient from './components/layout';
+
 import Myheader from './components/myheader';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';

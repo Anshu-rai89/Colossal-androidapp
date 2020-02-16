@@ -68,11 +68,13 @@ const SignUp=(props)=> {
     <TextInput  
     style={styles.textinputstyle}
       placeholder='Password'
+     
     
     />
     <TextInput  
     style={styles.textinputstyle}
       placeholder='Confirm Password'
+      secureTextEntry={true}
     
     />
     

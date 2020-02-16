@@ -57,6 +57,7 @@ const SignIn=(props)=> {
     <TextInput  
     style={styles.textinputstyle}
       placeholder='Password'
+      secureTextEntry={true}
     
     />
    <Button style={{marginTop:20}} mode="contained" onPress={(props) => props.pass.navigate('Signin')}>
